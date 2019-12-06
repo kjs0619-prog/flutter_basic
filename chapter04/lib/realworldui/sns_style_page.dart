@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/main.dart';
 
 class Banner {
   String text1;
@@ -76,6 +77,15 @@ class _SnsStylePageState extends State<SnsStylePage> {
           'Sns 스타일',
           style: TextStyle(color: Colors.black),
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              launchURL(
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/realworldui/sns_style_page.dart');
+            },
+            icon: Image.asset('assets/github_icon.png'),
+          ),
+        ],
       ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomNavigationBar(),

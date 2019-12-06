@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/main.dart';
 
 class GesturePage extends StatefulWidget {
   @override
@@ -13,6 +14,15 @@ class _GesturePageState extends State<GesturePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('GestureDetector'),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              launchURL(
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/event/gesture_page.dart');
+            },
+            icon: Image.asset('assets/github_icon.png'),
+          ),
+        ],
       ),
       body: Center(
         child: Column(

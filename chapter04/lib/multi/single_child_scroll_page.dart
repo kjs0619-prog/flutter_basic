@@ -19,7 +19,7 @@ class _SingleChildScrollViewPageState extends State<SingleChildScrollViewPage> {
           IconButton(
             onPressed: () {
               launchURL(
-                  'https://github.com/junsuk5/flutter_basic/blob/c27452df8bf1089b236c32db5e19c6eaae4d1f2d/lib/multi/single_child_scroll_page.dart');
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/multi/single_child_scroll_page.dart');
             },
             icon: Image.asset('assets/github_icon.png'),
           ),

@@ -11,7 +11,7 @@ class PageViewPage extends StatelessWidget {
           IconButton(
             onPressed: () {
               launchURL(
-                  'https://github.com/junsuk5/flutter_basic/blob/1a81a5d272a8bcd428f94513bbdd9b120d6d7d60/lib/multi/pageview_page.dart');
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/multi/pageview_page.dart');
             },
             icon: Image.asset('assets/github_icon.png'),
           ),

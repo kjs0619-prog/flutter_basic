@@ -12,7 +12,6 @@ import 'package:flutter_basic/navigation/navigation_menu_page.dart';
 import 'package:flutter_basic/navigation/stateful_page.dart';
 import 'package:flutter_basic/navigation/stateless_page.dart';
 import 'package:flutter_basic/realworldui/real_world_menu_page.dart';
-import 'package:flutter_basic/sample_app/sample_app_menu_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
@@ -39,12 +38,12 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter 입문'),
+        title: Text('오준석의 플러터 4장 기본 위젯 예제'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               launchURL(
-                  'https://github.com/junsuk5/flutter_basic/blob/master/lib/main.dart');
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/main.dart');
             },
             icon: Image.asset('assets/github_icon.png'),
           ),
@@ -148,15 +147,6 @@ class MenuPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NavigationMenuPage()),
-              );
-            },
-          ),
-          ListTile(
-            title: Text('7~. 앱 작성'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SampleAppMenuPage()),
               );
             },
           ),

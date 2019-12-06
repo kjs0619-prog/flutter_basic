@@ -8,7 +8,7 @@ class RealWorldMenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('5. 복잡한 UI 작성'),
+        title: Text('5. 복잡한 UI 작성 <추가 내용>'),
       ),
       body: ListView(
         children: <Widget>[

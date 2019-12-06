@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/main.dart';
 
 class Person {
   String name;
@@ -14,6 +15,15 @@ class FirstPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('First'),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              launchURL(
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/navigation/stateless_page.dart');
+            },
+            icon: Image.asset('assets/github_icon.png'),
+          ),
+        ],
       ),
       body: RaisedButton(
         child: Text('다음 페이지로'),

@@ -11,7 +11,7 @@ class RowPage extends StatelessWidget {
           IconButton(
             onPressed: () {
               launchURL(
-                  'https://github.com/junsuk5/flutter_basic/blob/03c057df00e50f26a9bff13e6fc7a48ff2edf4c8/lib/multi/row_page.dart');
+                  'https://github.com/junsuk5/flutter_basic/blob/3d00fee10e1c353df822cce0db6fa027958c251d/chapter04/lib/multi/row_page.dart');
             },
             icon: Image.asset('assets/github_icon.png'),
           ),
