@@ -133,7 +133,7 @@ class MenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('5. 복잡한 UI 작성'),
+            title: Text('5. 복잡한 UI 작성 <추가 내용>'),
             onTap: () {
               Navigator.push(
                 context,
