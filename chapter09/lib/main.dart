@@ -1,13 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 // 할 일 클래스
 class Todo {
-  bool isDone = false;
+  bool isDone;
   String title;
 
-  Todo(this.title);
+  Todo(this.title, {this.isDone = false});
 }
 
 // 시작 클래스
@@ -67,10 +68,22 @@ class _TodoListPageState extends State<TodoListPage> {
                 ),
               ],
             ),
-            Expanded(
-              child: ListView(
-                children: _items.map((todo) => _buildWidget(todo)).toList(),
-              ),
+            StreamBuilder<QuerySnapshot>(
+              stream: Firestore.instance.collection('todo').snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return CircularProgressIndicator();
+                }
+                final documents = snapshot.data.documents;
+                return Expanded(
+                  child: ListView(
+                    children: documents
+                        .map((doc) => _buildWidget(
+                            Todo(doc['title'], isDone: doc['isDone'])))
+                        .toList(),
+                  ),
+                );
+              },
             ),
           ],
         ),
