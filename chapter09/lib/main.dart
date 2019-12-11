@@ -77,10 +77,8 @@ class _TodoListPageState extends State<TodoListPage> {
                 final documents = snapshot.data.documents;
                 return Expanded(
                   child: ListView(
-                    children: documents
-                        .map((doc) => _buildWidget(
-                            Todo(doc['title'], isDone: doc['isDone'])))
-                        .toList(),
+                    children:
+                        documents.map((doc) => _buildWidget(doc)).toList(),
                   ),
                 );
               },
@@ -92,7 +90,8 @@ class _TodoListPageState extends State<TodoListPage> {
   }
 
   // 할 일 객체를 ListTile 형태로 변경하는 메서드
-  Widget _buildWidget(Todo todo) {
+  Widget _buildWidget(DocumentSnapshot doc) {
+    final todo = Todo(doc['title'], isDone: doc['isDone']);
     return ListTile(
       onTap: () => _toggleTodo(todo),
       title: Text(
