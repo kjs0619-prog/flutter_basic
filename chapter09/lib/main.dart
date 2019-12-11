@@ -113,10 +113,10 @@ class _TodoListPageState extends State<TodoListPage> {
 
   // 할 일 추가 메서드
   void _addTodo(Todo todo) {
-    setState(() {
-      _items.add(todo);
-      _todoController.text = '';
-    });
+    Firestore.instance
+        .collection('todo')
+        .add({'title': todo.title, 'isDone': todo.isDone});
+    _todoController.text = '';
   }
 
   // 할 일 삭제 메서드
