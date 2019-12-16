@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
   Widget _buildBody() {
     return SafeArea(
       child: StreamBuilder<QuerySnapshot>(
-        stream: _postStream(),
+        stream: Firestore.instance.collection('post').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return _buildNoPostBody();
@@ -125,6 +125,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  // 게시물이 있을 경우에 표시할 body
   Widget _buildHasPostBody(List<DocumentSnapshot> documents) {
     // 내 게시물 5개
     final myPosts =
@@ -142,8 +143,4 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // 내 게시물 가져오기
-  Stream<QuerySnapshot> _postStream() {
-    return Firestore.instance.collection('post').snapshots();
-  }
 }

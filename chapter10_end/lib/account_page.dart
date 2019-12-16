@@ -45,6 +45,7 @@ class AccountPage extends StatelessWidget {
                   height: 80.0,
                   child: GestureDetector(
                     onTap: () => print('이미지 클릭'),
+                    // 프로필 사진
                     child: CircleAvatar(
                       backgroundImage: NetworkImage(user.photoUrl),
                     ),
@@ -82,6 +83,7 @@ class AccountPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(8.0),
             ),
+            // 닉네임 표시
             Text(
               user.displayName,
               textAlign: TextAlign.center,
@@ -101,7 +103,8 @@ class AccountPage extends StatelessWidget {
                 return Text('$post\n게시물',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18.0));
-              }),
+              },
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
@@ -110,7 +113,13 @@ class AccountPage extends StatelessWidget {
             builder: (context, snapshot) {
               var follower = 0;
               if (snapshot.hasData) {
-                final filteredMap = snapshot.data.data..removeWhere((key, value) => value == false);
+                var filteredMap;
+                if (snapshot.data.data == null) {
+                  filteredMap = [];
+                } else {
+                  filteredMap = snapshot.data.data
+                    ..removeWhere((key, value) => value == false);
+                }
                 follower = filteredMap.length;
               }
 
@@ -127,7 +136,13 @@ class AccountPage extends StatelessWidget {
             builder: (context, snapshot) {
               var following = 0;
               if (snapshot.hasData) {
-                final filteredMap = snapshot.data.data..removeWhere((key, value) => value == false);
+                var filteredMap;
+                if (snapshot.data.data == null) {
+                  filteredMap = [];
+                } else {
+                  filteredMap = snapshot.data.data
+                    ..removeWhere((key, value) => value == false);
+                }
                 following = filteredMap.length;
               }
               return Text('$following\n팔로잉',
@@ -146,6 +161,7 @@ class AccountPage extends StatelessWidget {
           icon: Icon(Icons.exit_to_app),
           color: Colors.black,
           onPressed: () {
+            // 로그아웃
             FirebaseAuth.instance.signOut();
             _googleSignIn.signOut();
           },

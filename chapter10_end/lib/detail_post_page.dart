@@ -6,7 +6,7 @@ class DetailPostPage extends StatelessWidget {
   final DocumentSnapshot document;
   final FirebaseUser user;
 
-  DetailPostPage({Key key, this.document, this.user}) : super(key: key);
+  DetailPostPage({this.document, this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -103,13 +103,6 @@ class DetailPostPage extends StatelessWidget {
     );
   }
 
-  Stream<DocumentSnapshot> _followingStream() {
-    return Firestore.instance
-        .collection('following')
-        .document(user.email)
-        .snapshots();
-  }
-
   // 팔로우
   void _follow() {
     Firestore.instance
@@ -134,5 +127,13 @@ class DetailPostPage extends StatelessWidget {
         .collection('follower')
         .document(document['email'])
         .setData({user.email: false});
+  }
+
+  // 팔로잉 상태를 얻는 스트림
+  Stream<DocumentSnapshot> _followingStream() {
+    return Firestore.instance
+        .collection('following')
+        .document(user.email)
+        .snapshots();
   }
 }

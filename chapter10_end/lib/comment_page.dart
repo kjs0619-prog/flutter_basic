@@ -33,6 +33,7 @@ class CommentPage extends StatelessWidget {
     );
   }
 
+  // 이 문서의 댓글 목록을 가져오는 스트림
   Stream<QuerySnapshot> _commentStream() {
     return Firestore.instance
         .collection('post')

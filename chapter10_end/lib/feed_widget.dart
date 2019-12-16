@@ -25,7 +25,7 @@ class _FeedWidgetState extends State<FeedWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var comment = widget.document['comment'] ?? 0;
+    var commentCount = widget.document['commentCount'] ?? 0;
     return Column(
       children: <Widget>[
         ListTile(
@@ -105,7 +105,7 @@ class _FeedWidgetState extends State<FeedWidget> {
         SizedBox(
           height: 8.0,
         ),
-        if (comment > 0)
+        if (commentCount > 0)
           GestureDetector(
             onTap: () {
               Navigator.push(
@@ -123,12 +123,13 @@ class _FeedWidgetState extends State<FeedWidget> {
                   Row(
                     children: <Widget>[
                       Text(
-                        '댓글 $comment개 모두 보기',
+                        '댓글 $commentCount개 모두 보기',
                         style: TextStyle(color: Colors.grey[500]),
                       ),
                     ],
                   ),
-                  Text(widget.document['lastComment']),
+                  if (widget.document['lastComment'] != null)
+                    Text(widget.document['lastComment']),
                 ],
               ),
             ),
@@ -159,14 +160,18 @@ class _FeedWidgetState extends State<FeedWidget> {
 
   // 좋아
   void _like() {
+    // 좋아요 리스트를 복사
     final List likedUsers =
         List<String>.from(widget.document['likedUsers'] ?? []);
+    // 나를 좋아요 목록에 추가
     likedUsers.add(widget.user.email);
 
+    // 수정할 항목을 Map으로 설정
     final updateData = {
       'likedUsers': likedUsers,
     };
 
+    // 이 게시물의 likedUsers 필드의 값을 수정
     Firestore.instance
         .collection('post')
         .document(widget.document.documentID)
@@ -175,13 +180,17 @@ class _FeedWidgetState extends State<FeedWidget> {
 
   // 좋아요 취소
   void _unlike() {
+    // 좋아요 리스트를 복사
     final List likedUsers = List<String>.from(widget.document['likedUsers']);
+    // 나를 좋아요 목록에서 삭제
     likedUsers.remove(widget.user.email);
 
+    // 수정할 항목을 Map으로 설정
     final updateData = {
       'likedUsers': likedUsers,
     };
 
+    // 이 게시물의 likedUsers 필드의 값을 수정
     Firestore.instance
         .collection('post')
         .document(widget.document.documentID)
@@ -190,22 +199,26 @@ class _FeedWidgetState extends State<FeedWidget> {
 
   // 댓글 작성
   void _writeComment(String text) {
+    // 댓글 내용
     final data = {
       'writer': widget.user.email,
       'comment': text,
     };
 
+    // 현재 문서의 comment 서브 컬렉션으로 댓글 문서를 추가
     Firestore.instance
         .collection('post')
         .document(widget.document.documentID)
         .collection('comment')
         .add(data);
 
+    // 현재 문서에 수정할 내용을 Map으로 준비
     final updateData = {
       'lastComment': text,
-      'comment': (widget.document['comment'] ?? 0) + 1,
+      'commentCount': (widget.document['commentCount'] ?? 0) + 1,
     };
 
+    // 현재 문서를 수정
     Firestore.instance
         .collection('post')
         .document(widget.document.documentID)

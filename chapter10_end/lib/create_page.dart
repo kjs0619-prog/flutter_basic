@@ -33,6 +33,7 @@ class _CreatePageState extends State<CreatePage> {
 
   File _image;
 
+  // 갤러리에서 사진 가져오기
   Future _getImage() async {
     var image = await ImagePicker.pickImage(
       source: ImageSource.gallery,
@@ -85,9 +86,7 @@ class _CreatePageState extends State<CreatePage> {
     final downloadUrl = await storageTaskSnapshot.ref.getDownloadURL();
 
     // 문서 작성
-    final doc = Firestore.instance.collection('post').document();
-    await doc.setData({
-      'id': doc.documentID,
+    await Firestore.instance.collection('post').add({
       'photoUrl': downloadUrl,
       'contents': textEditingController.text,
       'email': widget.user.email,
