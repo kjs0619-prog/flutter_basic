@@ -148,7 +148,7 @@ class _FeedWidgetState extends State<FeedWidget> {
     );
   }
 
-  // 좋아
+  // 좋아요
   void _like() {
   }
 

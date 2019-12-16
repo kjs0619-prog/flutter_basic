@@ -8,7 +8,7 @@ class DetailPostPage extends StatelessWidget {
   };
 //  final FirebaseUser user;
 
-//  DetailPostPage({Key key, this.document, this.user}) : super(key: key);
+//  DetailPostPage({this.document, this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -91,4 +91,6 @@ class DetailPostPage extends StatelessWidget {
   void _unfollow() {
 
   }
+
+  // 팔로잉 상태를 얻는 스트림
 }

@@ -115,6 +115,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  // 게시물이 있을 경우에 표시한 body
   Widget _buildHasPostBody() {
     // 내 게시물 5개
 
@@ -126,6 +127,5 @@ class HomePage extends StatelessWidget {
       children: List.generate(10, (i) => i).map((doc) => FeedWidget()).toList(),
     );
   }
-
-  // 내 게시물 가져오기
+  
 }
