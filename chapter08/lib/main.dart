@@ -155,14 +155,7 @@ class _StopWatchPageState extends State<StopWatchPage> {
 
   // 랩타임 기록
   void _recordLapTime(String time) {
-    _lapTimes.insert(0, '${_lapTimes.length + 1}LAB $time');
+    _lapTimes.insert(0, '${_lapTimes.length + 1}등 $time');
   }
 
-  void something(Function(int i) f) {
-    f(10);
-  }
-
-  void myPrintFunction(int i) {
-    print('내가 만든 함수에서 출력한 $i');
-  }
 }
