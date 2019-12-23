@@ -54,6 +54,5 @@ class _CheckRadioSwitchPageState extends State<CheckRadioSwitchPage> {
         ),
       ),
     );
-    ;
   }
 }

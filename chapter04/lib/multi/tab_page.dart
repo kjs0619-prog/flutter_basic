@@ -20,9 +20,9 @@ class TabPage extends StatelessWidget {
           ],
           bottom: TabBar(
             tabs: <Widget>[
-              Tab(icon: Icon(Icons.tag_faces,),),
-              Tab(icon: Icon(Icons.credit_card,),),
-              Tab(icon: Icon(Icons.info,),),
+              Tab(icon: Icon(Icons.tag_faces)),
+              Tab(text: '메뉴2'),
+              Tab(icon: Icon(Icons.info), text: '메뉴3'),
             ],
           ),
         ),

@@ -6,6 +6,7 @@ import 'package:flutter_basic/basic/progress_page.dart';
 import 'package:flutter_basic/basic/text_page.dart';
 import 'package:flutter_basic/dialog/alert_dialog_page.dart';
 import 'package:flutter_basic/dialog/date_picker_page.dart';
+import 'package:flutter_basic/dialog/time_picker_page.dart';
 import 'package:flutter_basic/input/check_switch_page.dart';
 import 'package:flutter_basic/input/dropdown_page.dart';
 import 'package:flutter_basic/input/radio_page.dart';
@@ -30,11 +31,20 @@ class DialogMenuPage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('DatePicker / TimePicker'),
+            title: Text('DatePicker'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DatePickerPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('TimePicker'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TimePickerPage()),
               );
             },
           ),

@@ -28,26 +28,21 @@ class _DropdownPageState extends State<DropdownPage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              DropdownButton(
-                value: _selectedValue,
-                items: _valueList.map(
-                  (value) {
-                    return DropdownMenuItem(
-                      value: value,
-                      child: Text(value),
-                    );
-                  },
-                ).toList(),
-                onChanged: (value) {
-                  setState(() {
-                    _selectedValue = value;
-                  });
-                },
-              ),
-            ],
+          child: DropdownButton(
+            value: _selectedValue,
+            items: _valueList.map(
+              (value) {
+                return DropdownMenuItem(
+                  value: value,
+                  child: Text(value),
+                );
+              },
+            ).toList(),
+            onChanged: (value) {
+              setState(() {
+                _selectedValue = value;
+              });
+            },
           ),
         ),
       ),

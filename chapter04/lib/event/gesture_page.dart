@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
 
-class GesturePage extends StatefulWidget {
-  @override
-  _GesturePageState createState() => _GesturePageState();
-}
-
-class _GesturePageState extends State<GesturePage> {
-  var value = '';
+class GesturePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

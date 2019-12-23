@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
 
+enum Gender { MAN, WOMEN }
+
 class RadioPage extends StatefulWidget {
   @override
   _RadioPageState createState() => _RadioPageState();
 }
 
-enum Gender { MAN, WOMEN }
-
 class _RadioPageState extends State<RadioPage> {
   Gender _gender = Gender.MAN;
-
-  TextEditingController c;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkbox / Radio / Switch'),
+        title: Text('Radio / RadioListTile'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -62,7 +60,7 @@ class _RadioPageState extends State<RadioPage> {
               SizedBox(
                 height: 40,
               ),
-              RadioListTile<Gender>(
+              RadioListTile(
                 title: Text('남자'),
                 value: Gender.MAN,
                 groupValue: _gender,
@@ -72,7 +70,7 @@ class _RadioPageState extends State<RadioPage> {
                   });
                 },
               ),
-              RadioListTile<Gender>(
+              RadioListTile(
                 title: Text('여자'),
                 value: Gender.WOMEN,
                 groupValue: _gender,
@@ -87,6 +85,5 @@ class _RadioPageState extends State<RadioPage> {
         ),
       ),
     );
-    ;
   }
 }

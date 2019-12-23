@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
 
-class DatePickerPage extends StatefulWidget {
+class TimePickerPage extends StatefulWidget {
   @override
-  _DatePickerPageState createState() => _DatePickerPageState();
+  _TimePickerPageState createState() => _TimePickerPageState();
 }
 
-class _DatePickerPageState extends State<DatePickerPage> {
-  DateTime _selectedTime;
+class _TimePickerPageState extends State<TimePickerPage> {
+  String _selectedTime;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DatePicker'),
+        title: Text('TimePicker'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -28,26 +28,18 @@ class _DatePickerPageState extends State<DatePickerPage> {
         children: <Widget>[
           RaisedButton(
             onPressed: () {
-              Future<DateTime> selectedDate = showDatePicker(
+              Future<TimeOfDay> selectedTime = showTimePicker(
+                initialTime: TimeOfDay.now(),
                 context: context,
-                initialDate: DateTime.now(), // 초깃값
-                firstDate: DateTime(2018), // 시작일
-                lastDate: DateTime(2030), // 마지막일
-                builder: (BuildContext context, Widget child) {
-                  return Theme(
-                    data: ThemeData.dark(), // 다크테마
-                    child: child,
-                  );
-                },
               );
 
-              selectedDate.then((dateTime) {
+              selectedTime.then((timeOfDay) {
                 setState(() {
-                  _selectedTime = dateTime;
+                  _selectedTime = '${timeOfDay.hour}:${timeOfDay.minute}';
                 });
               });
             },
-            child: Text('Date Picker'),
+            child: Text('Time Picker'),
           ),
           Text('$_selectedTime'),
         ],
