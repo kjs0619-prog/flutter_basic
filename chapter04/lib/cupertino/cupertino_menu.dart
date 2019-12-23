@@ -76,9 +76,9 @@ class _CupertinoPageState extends State<CupertinoPage> {
     );
   }
 
-  final _items = List.generate(10, (i) => i);
 
   _showCupertinoPicker() async {
+    final _items = List.generate(10, (i) => i);
     var result = _items[0];
     await showCupertinoModalPopup(
       context: context,
