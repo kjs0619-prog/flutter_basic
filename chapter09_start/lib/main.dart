@@ -69,7 +69,7 @@ class _TodoListPageState extends State<TodoListPage> {
             ),
             Expanded(
               child: ListView(
-                children: _items.map((todo) => _buildWidget(todo)).toList(),
+                children: _items.map((todo) => _buildItemWidget(todo)).toList(),
               ),
             ),
           ],
@@ -78,18 +78,17 @@ class _TodoListPageState extends State<TodoListPage> {
     );
   }
 
-
   // 할 일 객체를 ListTile 형태로 변경하는 메서드
-  Widget _buildWidget(Todo todo) {
+  Widget _buildItemWidget(Todo todo) {
     return ListTile(
       onTap: () => _toggleTodo(todo),
       title: Text(
         todo.title,
         style: todo.isDone
             ? TextStyle(
-          decoration: TextDecoration.lineThrough,
-          fontStyle: FontStyle.italic,
-        )
+                decoration: TextDecoration.lineThrough,
+                fontStyle: FontStyle.italic,
+              )
             : null,
       ),
       trailing: IconButton(
@@ -107,14 +106,12 @@ class _TodoListPageState extends State<TodoListPage> {
     });
   }
 
-
   // 할 일 삭제 메서드
   void _deleteTodo(Todo todo) {
     setState(() {
       _items.remove(todo);
     });
   }
-
 
   // 할 일 완료/미완료 메서드
   void _toggleTodo(Todo todo) {
