@@ -1,4 +1,4 @@
-# flutter_ui_advanced
+# chapter08
 
 A new Flutter application.
 
