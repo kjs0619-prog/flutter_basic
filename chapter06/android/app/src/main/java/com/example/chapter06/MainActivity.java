@@ -1,4 +1,4 @@
-package com.example.chapter09;
+package com.example.chapter06;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

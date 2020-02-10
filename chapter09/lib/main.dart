@@ -62,7 +62,7 @@ class _StopWatchPageState extends State<StopWatchPage> {
 
   Widget _buildBody() {
     var sec = _time ~/ 100;
-    var milli = '${_time % 100}'.padLeft(2, '0');
+    var hundredth = '${_time % 100}'.padLeft(2, '0');
 
     return Center(
       child: Padding(
@@ -79,7 +79,7 @@ class _StopWatchPageState extends State<StopWatchPage> {
                       '$sec',
                       style: TextStyle(fontSize: 50.0),
                     ),
-                    Text('$milli'),
+                    Text('$hundredth'),
                   ],
                 ),
                 Container(
@@ -106,7 +106,7 @@ class _StopWatchPageState extends State<StopWatchPage> {
               child: RaisedButton(
                 onPressed: () {
                   setState(() {
-                    _recordLapTime('$sec.$milli');
+                    _recordLapTime('$sec.$hundredth');
                   });
                 },
                 child: Text('랩타임'),

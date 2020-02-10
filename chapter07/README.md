@@ -1,4 +1,4 @@
-# chapter06
+# flutter_ui_advanced
 
 A new Flutter application.
 
