@@ -38,7 +38,7 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('오준석의 플러터 4장 기본 위젯 예제'),
+        title: Text('플러터 생존코딩 4~6장 예제'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
