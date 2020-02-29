@@ -12,7 +12,7 @@
 
 ## 오탈자
 
-오탈자는 Github이슈 등록 또는 한빛미디어 오탈자 등록 (http://www.hanbit.co.kr/store/books/look.php?p_code=B9770627589)으로 제보 바랍니다.
+오탈자는 Github이슈 등록 또는 한빛미디어 오탈자 등록 (http://www.hanbit.co.kr/store/books/look.php?p_code=B9770627589) 으로 제보 바랍니다.
 
 - xx쪽 xxx -> yyy
 
