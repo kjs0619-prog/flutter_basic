@@ -65,15 +65,15 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _index,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            title: Text('홈'),
+            label: '홈',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title: Text('이용서비스'),
+            label: '이용서비스',
             icon: Icon(Icons.assignment),
           ),
           BottomNavigationBarItem(
-            title: Text('내 정보'),
+            label: '내 정보',
             icon: Icon(Icons.account_circle),
           ),
         ],
@@ -204,8 +204,10 @@ class Page1 extends StatelessWidget {
 
   Widget _buildMiddle() {
     return CarouselSlider(
-      height: 150,
-      autoPlay: true,
+      options: CarouselOptions(
+        height: 150,
+        autoPlay: true,
+      ),
       items: dummyItems.map((url) {
         return Builder(
           builder: (BuildContext context) {
