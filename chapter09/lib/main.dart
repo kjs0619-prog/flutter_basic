@@ -103,7 +103,7 @@ class _StopWatchPageState extends State<StopWatchPage> {
             Positioned(
               right: 10,
               bottom: 10,
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   setState(() {
                     _recordLapTime('$sec.$hundredth');
