@@ -78,7 +78,7 @@ class _BmiMainState extends State<BmiMain> {
               Container(
                 margin: const EdgeInsets.only(top: 16.0),
                 alignment: Alignment.centerRight,
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState.validate()) {
                       Navigator.push(

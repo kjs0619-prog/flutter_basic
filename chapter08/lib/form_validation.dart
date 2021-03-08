@@ -46,12 +46,12 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: () {
                 // 폼을 검증하여 통과는 true, 실패는 false를 리턴
                 if (_formKey.currentState.validate()) {
                   // 검증이 통과하면 스낵바를 표시
-                  Scaffold.of(context)
+                  ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('검증 완료')));
                 }
               },
