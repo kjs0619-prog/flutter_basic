@@ -3,12 +3,6 @@ import 'package:flutter_basic/animation/animated_container_page.dart';
 import 'package:flutter_basic/animation/hero_page.dart';
 import 'package:flutter_basic/animation/sliver_fillremaining_page.dart';
 import 'package:flutter_basic/animation/sliver_list_page.dart';
-import 'package:flutter_basic/basic/circle_avatar_page.dart';
-import 'package:flutter_basic/basic/icon_page.dart';
-import 'package:flutter_basic/basic/image_page.dart';
-import 'package:flutter_basic/basic/progress_page.dart';
-import 'package:flutter_basic/basic/text_page.dart';
-import 'package:flutter_basic/main.dart';
 
 class AnimationMenuPage extends StatelessWidget {
   @override

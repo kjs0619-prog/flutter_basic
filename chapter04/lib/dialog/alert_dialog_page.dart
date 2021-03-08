@@ -22,7 +22,7 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
           ),
         ],
       ),
-      body: RaisedButton(
+      body: ElevatedButton(
         onPressed: () {
           _neverSatisfied();
         },
@@ -47,14 +47,14 @@ class _AlertDialogPageState extends State<AlertDialogPage> {
             ),
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('OK'),
               onPressed: () {
                 // Todo
                 Navigator.of(context).pop();
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();

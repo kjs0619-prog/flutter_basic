@@ -24,20 +24,20 @@ class ButtonMenu extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: Text('RaisedButton'),
+            title: Text('ElevatedButton'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RaisedButtonPage()),
+                MaterialPageRoute(builder: (context) => ElevatedButtonPage()),
               );
             },
           ),
           ListTile(
-            title: Text('FlatButton'),
+            title: Text('TextButton'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => FlatButtonPage()),
+                MaterialPageRoute(builder: (context) => TextButtonPage()),
               );
             },
           ),

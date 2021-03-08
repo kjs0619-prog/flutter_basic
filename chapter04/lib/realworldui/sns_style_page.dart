@@ -71,7 +71,8 @@ class _SnsStylePageState extends State<SnsStylePage> {
         iconTheme: IconThemeData(
           color: Colors.black, // 뒤로가기 아이콘 색
         ),
-        centerTitle: true, // 제목을 가운데로 위치
+        centerTitle: true,
+        // 제목을 가운데로 위치
         backgroundColor: Colors.white,
         title: Text(
           'Sns 스타일',
@@ -100,15 +101,15 @@ class _SnsStylePageState extends State<SnsStylePage> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          title: Text('홈'),
+          label: '홈',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.assignment),
-          title: Text('이용서비스'),
+          label: '이용서비스',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_box),
-          title: Text('내 정보'),
+          label: '내 정보',
         ),
       ],
       onTap: (index) {
@@ -134,10 +135,14 @@ class _SnsStylePageState extends State<SnsStylePage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '택시'),
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '블랙'),
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '바이크'),
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '대리'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '택시'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '블랙'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '바이크'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '대리'),
           ],
         ),
         SizedBox(
@@ -147,11 +152,15 @@ class _SnsStylePageState extends State<SnsStylePage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '주차'),
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '카풀'),
-            _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '내비'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '주차'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '카풀'),
+            _buildItem(
+                'https://img.icons8.com/cotton/64/000000/taxi.png', '내비'),
             Opacity(
-              child: _buildItem('https://img.icons8.com/cotton/64/000000/taxi.png', '내비'),
+              child: _buildItem(
+                  'https://img.icons8.com/cotton/64/000000/taxi.png', '내비'),
               opacity: 0,
             ),
           ],
@@ -199,14 +208,16 @@ class _SnsStylePageState extends State<SnsStylePage> {
       child: Stack(
         children: [
           CarouselSlider(
-            height: 150,
-            viewportFraction: 1.0,
-            autoPlay: true,
-            onPageChanged: (index) {
-              setState(() {
-                _current = index;
-              });
-            },
+            options: CarouselOptions(
+              height: 150,
+              viewportFraction: 1.0,
+              autoPlay: true,
+              onPageChanged: (index, _) {
+                setState(() {
+                  _current = index;
+                });
+              },
+            ),
             items: banners.map((banner) => CardBanner(banner: banner)).toList(),
           ),
           Positioned(

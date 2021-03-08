@@ -25,7 +25,7 @@ class FirstPage extends StatelessWidget {
           ),
         ],
       ),
-      body: RaisedButton(
+      body: ElevatedButton(
         child: Text('다음 페이지로'),
         onPressed: () async {
           final person = Person('홍길동', 20);
@@ -53,7 +53,7 @@ class SecondPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(person.name),
       ),
-      body: RaisedButton(
+      body: ElevatedButton(
         child: Text('이전 페이지로'),
         onPressed: () {
           Navigator.pop(context, 'ok');

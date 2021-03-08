@@ -26,7 +26,7 @@ class _DatePickerPageState extends State<DatePickerPage> {
       ),
       body: Column(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               Future<DateTime> selectedDate = showDatePicker(
                 context: context,

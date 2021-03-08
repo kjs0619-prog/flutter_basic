@@ -20,17 +20,18 @@ class BottomNavigationPage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          title: Text('Home'),
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          title: Text('Profile'),
+          label: 'Profile',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.notifications),
-          title: Text('Notificatio'),
+          label: 'Notificatio',
         ),
       ]),
     );
+
   }
 }

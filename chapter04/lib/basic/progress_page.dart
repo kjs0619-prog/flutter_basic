@@ -30,6 +30,5 @@ class ProgressPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

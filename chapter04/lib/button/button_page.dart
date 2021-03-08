@@ -11,18 +11,17 @@ class ButtonPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              child: Text('RaisedButton'),
-              color: Colors.orange, // 배경 색상
+            ElevatedButton(
+              child: Text('ElevatedButton'),
               onPressed: () {},
             ),
-            FlatButton(
-              child: Text('FlatButton'),
+            TextButton(
+              child: Text('TextButton'),
               onPressed: () {},
             ),
             IconButton(
               icon: Icon(Icons.add),
-              color: Colors.red,  // 아이콘 색상
+              color: Colors.red, // 아이콘 색상
               iconSize: 100.0, // 기본값 24.0
               onPressed: () {},
             ),

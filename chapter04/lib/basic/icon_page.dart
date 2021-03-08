@@ -25,6 +25,5 @@ class IconPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

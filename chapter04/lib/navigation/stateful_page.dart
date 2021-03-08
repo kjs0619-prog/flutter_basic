@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
-import 'package:flutter_basic/navigation/stateless_page.dart';
 
 class FirstStatefulPage extends StatefulWidget {
   @override
@@ -38,7 +37,7 @@ class _FirstStatefulPageState extends State<FirstStatefulPage> {
           ),
         ],
       ),
-      body: RaisedButton(
+      body: ElevatedButton(
         child: Text('다음 페이지로'),
         onPressed: () {
           Navigator.push(
@@ -78,7 +77,7 @@ class _SecondStatefulPageState extends State<SecondStatefulPage> {
       appBar: AppBar(
         title: Text('Second'),
       ),
-      body: RaisedButton(
+      body: ElevatedButton(
         child: Text('이전 페이지로'),
         onPressed: () {
           Navigator.pop(context);

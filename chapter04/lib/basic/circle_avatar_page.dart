@@ -23,6 +23,5 @@ class CircleAvatarPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
 
-class RaisedButtonPage extends StatelessWidget {
+class ElevatedButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RaisedButtonPage'),
+        title: Text('ElevatedButtonPage'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -19,9 +19,8 @@ class RaisedButtonPage extends StatelessWidget {
       ),
       body: Center(
         child:
-        RaisedButton(
-          child: Text('RaisedButton'),
-          color: Colors.orange, // 배경 색상
+        ElevatedButton(
+          child: Text('ElevatedButton'),
           onPressed: () {},
         ),
       ),

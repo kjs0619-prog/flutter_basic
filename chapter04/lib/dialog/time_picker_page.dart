@@ -26,7 +26,7 @@ class _TimePickerPageState extends State<TimePickerPage> {
       ),
       body: Column(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               Future<TimeOfDay> selectedTime = showTimePicker(
                 initialTime: TimeOfDay.now(),

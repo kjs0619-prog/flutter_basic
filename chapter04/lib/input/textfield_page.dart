@@ -45,6 +45,5 @@ class TextFieldPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

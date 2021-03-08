@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/basic/circle_avatar_page.dart';
-import 'package:flutter_basic/basic/icon_page.dart';
-import 'package:flutter_basic/basic/image_page.dart';
 import 'package:flutter_basic/basic/progress_page.dart';
-import 'package:flutter_basic/basic/text_page.dart';
 import 'package:flutter_basic/input/check_switch_page.dart';
 import 'package:flutter_basic/input/dropdown_page.dart';
 import 'package:flutter_basic/input/radio_page.dart';

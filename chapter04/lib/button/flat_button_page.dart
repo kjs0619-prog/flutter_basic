@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/main.dart';
 
-class FlatButtonPage extends StatelessWidget {
+class TextButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FlatButtonPage'),
+        title: Text('TextButtonPage'),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -18,8 +18,8 @@ class FlatButtonPage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: FlatButton(
-          child: Text('FlatButton'),
+        child: TextButton(
+          child: Text('TextButton'),
           onPressed: () {},
         ),
       ),
