@@ -1,8 +1,8 @@
 # 오준석의 플러터 생존코딩
 <img src="http://image.yes24.com/goods/87664198/800x0" width="240">
 
-## * 개정판 중요 공지 *
-Flutter 2 대응 개정판에서는 기본설정이 Dart 버전 2.7.0이 기준이었습니다. 따라서 프로젝트 생성후 pubspec.yaml 파일에서 sdk 버전을 2.12.0 에서 2.7.0으로 변경하고 pub get을 실행하시고 책 대로 진행하셔야 원활하게 진행하실 수 있습니다.
+## * 중요 공지 *
+책을 집필한 시점과 현재의 프로젝트 생성시 버전 차이로 인해서, 원활한 진행을 위해서는 프로젝트 생성후 pubspec.yaml 파일에서 sdk 버전을 2.12.0 에서 2.7.0으로 변경하고 pub get을 실행하시면 책 대로 진행하실 수 있습니다.
 
 ![pubspec](https://user-images.githubusercontent.com/7101560/119285286-ada26600-bc7c-11eb-842e-c8d4dedcf264.png)
 
