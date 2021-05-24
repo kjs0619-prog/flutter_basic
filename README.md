@@ -8,6 +8,10 @@
 
 현시점에 기본값인 Dart 2.12.0에 적용되는 Null Safety는 부록에서 소개하고 있습니다.
 
+유튜브에 추가적으로 설명 영상도 올렸으니 참고하세요
+
+[![Video Label](http://img.youtube.com/vi/DrYpIewJ640/0.jpg)](https://youtu.be/DrYpIewJ640)
+
 
 ## 변경사항
 
